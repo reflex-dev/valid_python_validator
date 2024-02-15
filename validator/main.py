@@ -28,7 +28,7 @@ class ValidPython(Validator):
     | Programmatic fix              | None                              |
     """
 
-    def validate(self, value: Any, metadata: Dict) -> ValidationResult:
+    def validate(self, value: Any, metadata: Dict = {}) -> ValidationResult:
         logger.debug(f"Validating {value} is not a bug...")
 
         # The value is a Python code snippet. We need to check for syntax errors.
