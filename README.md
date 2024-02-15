@@ -15,7 +15,7 @@ This validator checks if a string is valid Python syntax by trying to parse the 
 # Installation
 
 ```bash
-$ guardrails hub install hub://guardrails/bug-free-python
+$ guardrails hub install hub://reflex/valid_python
 ```
 
 # Usage Examples
