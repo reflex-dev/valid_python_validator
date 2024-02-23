@@ -23,7 +23,7 @@ class ValidPython(Validator):
 
     | Property                      | Description                       |
     | ----------------------------- | --------------------------------- |
-    | Name for `format` attribute   | `bug-free-python`                 |
+    | Name for `format` attribute   | `reflex/valid_python`             |
     | Supported data types          | `string`                          |
     | Programmatic fix              | None                              |
     """
