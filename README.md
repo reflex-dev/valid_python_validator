@@ -4,7 +4,7 @@
 | --- | --- |
 | Date of development | Feb 15, 2024 |
 | Validator type | Format |
-| Blog |  |
+| Blog | - |
 | License | Apache 2 |
 | Input/Output | Output |
 
@@ -20,7 +20,7 @@ This validator checks if a string is valid Python syntax by trying to parse the 
 # Installation
 
 ```bash
-$ guardrails hub install hub://reflex/valid_python
+guardrails hub install hub://reflex/valid_python
 ```
 
 # Usage Examples
@@ -35,9 +35,7 @@ from guardrails.hub import ValidPython
 from guardrails import Guard
 
 # Setup Guard
-guard = Guard().use(
-    ValidPython
-)
+guard = Guard().use(ValidPython, on_fail="exception")
 
 # Correct python
 correct_python = """
@@ -59,7 +57,14 @@ foo()
 """
 
 guard.validate(correct_python)  # Validator passes
-guard.validate(incorrect_python)  # Validator fails
+try:
+    guard.validate(incorrect_python)  # Validator fails
+except Exception as e:
+    print(e)
+```
+Output:
+```console
+Validation failed for field with errors: Syntax error: expected ':'
 ```
 
 # API Reference
